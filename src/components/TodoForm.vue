@@ -51,7 +51,6 @@ export default {
         return {
             title: "",
             description: "",
-            isDone: false,
         };
     },
 
@@ -65,7 +64,6 @@ export default {
             if (!todo) return;
             this.title = todo.title;
             this.description = todo.description;
-            this.isDone = todo.isDone;
         },
     },
     computed: {
@@ -98,7 +96,6 @@ export default {
                 id: this.todoToEdit.id,
                 title: this.title,
                 description: this.description,
-                isDone: this.isDone,
             };
 
             this.$emit("update-todo", editedData);
@@ -111,7 +108,6 @@ export default {
         resetForm() {
             this.title = "";
             this.description = "";
-            this.isDone = false;
         },
         validateForm() {
             return this.title.length > 0 && this.description.length > 0;
